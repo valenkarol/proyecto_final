@@ -4,8 +4,8 @@ Descripciín basisca de su Proyecto de POO ...
 
 # Autores
 
-- Autor 1
-- Autor 2
+- Autor karol
+- Autor valentina
 
 # Herramientas
 
