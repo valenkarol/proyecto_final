@@ -1,7 +1,7 @@
 # proyecto_final
 
-Descripciín basisca de su Proyecto de POO.
-Proyecto final para programacion 1 implementando POO
+Descripción básica de su Proyecto de POO.
+Proyecto final para programación 1 implementando POO
 
 # Autores
 
