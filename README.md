@@ -1,11 +1,12 @@
 # proyecto_final
 
-Descripciín basisca de su Proyecto de POO ...
+Descripciín basisca de su Proyecto de POO.
+Proyecto final para programacion 1 implementando POO
 
 # Autores
 
-- Autor 1
-- Autor 2
+- Autor 1 Kalor Melissa Davila
+- Autor 2 Valentina Gutierrez
 
 # Herramientas
 
