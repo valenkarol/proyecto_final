@@ -12,7 +12,7 @@ public class Moto extends Vehiculo {
         return velocidad;
     }
     public TipoMoto getTipoMoto() {
-        return tipoMoto;
+        return tipoMoto
     }
     
     
