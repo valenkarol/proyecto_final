@@ -1,5 +1,14 @@
 package co.edu.uniquindio.poo;
 
-public record Registro() {
-    
+import java.time.LocalDate;
+
+public record Registro(LocalDate fecha) {
+    public Registro{
+        assert fecha!=null;
+    }
+
+    public LocalDate fecha() {
+        return fecha;
+    }
+
 }
