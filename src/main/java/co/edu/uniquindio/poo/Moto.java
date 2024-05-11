@@ -2,19 +2,18 @@ package co.edu.uniquindio.poo;
 
 public class Moto extends Vehiculo {
     private int velocidad;
+    private TipoMoto tipoMoto;
 
-    public Moto (int velocidad){
+    public Moto (String modelo, String placa, int velocidad){
         super(modelo, placa);
-        this.velocidad
+        this.velocidad=velocidad;
     }
     public int getVelocidad(){
-        return velocidad=velocidad;
+        return velocidad;
     }
-
     public TipoMoto getTipoMoto() {
-        return tipoMoto
-
-    public String getTipoMoto(){
+        return tipoMoto;
     }
+    
     
 }
