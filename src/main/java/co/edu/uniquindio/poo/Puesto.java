@@ -1,5 +1,5 @@
 package co.edu.uniquindio.poo;
 
-public class Puesto {
+public record Puesto(byte cantidad) {
     
 }
