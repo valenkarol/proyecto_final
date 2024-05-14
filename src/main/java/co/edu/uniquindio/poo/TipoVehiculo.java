@@ -5,10 +5,20 @@ public enum TipoVehiculo {
     CLASICA(1500),
     HIBRIDA(2000);
 
-    private final double tarifa;
+    private double tarifa;
 
 
     private TipoVehiculo(double tarifa) {
+        this.tarifa = tarifa;
+    }
+
+
+    public double getTarifa() {
+        return tarifa;
+    }
+
+
+    public void setTarifa(double tarifa) {
         this.tarifa = tarifa;
     }
     
