@@ -7,22 +7,16 @@ public enum TipoVehiculo {
 
     private double tarifa;
 
-
     private TipoVehiculo(double tarifa) {
         this.tarifa = tarifa;
     }
-
 
     public double getTarifa() {
         return tarifa;
     }
 
-
     public void setTarifa(double tarifa) {
         this.tarifa = tarifa;
     }
-    
-    
 
-        
 }
