@@ -1,6 +1,6 @@
 package co.edu.uniquindio.poo;
 
-public enum Precio {
+public enum TipoVehiculo {
     CARRO(),
     CLASICA(),
     HIBRIDA();
