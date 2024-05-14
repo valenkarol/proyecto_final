@@ -1,12 +1,20 @@
 package co.edu.uniquindio.poo;
 
 public abstract class Vehiculo {
-    /**
-     * Método abstracto para definir que todo vehiculo
-     * que implemente esta interfaz debe tener un método getPlaca y getModelo
-     * 
-     * @return valor de Placa y valor Modelo del vehiculo
-     */
-    public Vehiculo(String modelo, Strin)
+    private final String modelo;
+    private final String placa;
+
+    public String getPlaca(){
+        return placa;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public Vehiculo(String modelo, String placa) {
+        this.modelo = modelo;
+        this.placa = placa;
+    }
 
     }
