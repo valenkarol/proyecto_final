@@ -7,5 +7,6 @@ public abstract class Vehiculo {
      * 
      * @return valor de Placa y valor Modelo del vehiculo
      */
-    
-}
+    public Vehiculo(String modelo, Strin)
+
+    }

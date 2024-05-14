@@ -1,5 +1,9 @@
 package co.edu.uniquindio.poo;
 
-public class Precio {
-    
+public enum Precio {
+    CARRO(),
+    CLASICA(),
+    HIBRIDA();
+
+        
 }
