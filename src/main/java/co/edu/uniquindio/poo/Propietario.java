@@ -1,40 +1,53 @@
 package co.edu.uniquindio.poo;
 
-public record Propietario (String nombre, String apellido, String id, String correo, String numero, byte edad){
-    
-    public Propietario {
-        assert nombre != null && !nombre.isBlank(): "El nombre debe ser diferente de null";
-        assert apellido != null && !apellido.isBlank(): "El apellido debe ser diferente de null";
-        assert id != null && !id.isBlank(): "El id debe ser diferente de null";
-        assert correo != null && !correo.isBlank(): "El correo debe ser diferente de null";
-        assert numero != null && !numero.isBlank(): "El numero debe ser diferente de null";
+public class Propietario {
+
+    private final String nombre;
+    private final String apellido;
+    private final String id;
+    private final String correo;
+    private final String numero;
+    private final byte edad;
+
+    public Propietario(String nombre, String apellido, String id, String correo, String numero, byte edad) {
+        assert nombre != null && !nombre.isBlank() : "El nombre debe ser diferente de null";
+        assert apellido != null && !apellido.isBlank() : "El apellido debe ser diferente de null";
+        assert id != null && !id.isBlank() : "El número de identificación debe ser diferente de null";
+        assert correo != null && correo.contains("@") : "El correo electrónico debe contener el símbolo @";
+        assert numero != null : "El teléfono no puede ser null";
         assert edad > 0 : "La edad debe ser mayor a cero";
 
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.id = id;
+        this.correo = correo;
+        this.numero = numero;
+        this.edad = edad;
     }
 
-    public String nombre() {
+    public String getNombre() {
         return nombre;
     }
 
-    public String apellido() {
+    public String getApellido() {
         return apellido;
     }
 
-    public String id() {
+    public String getId() {
         return id;
     }
 
-    public String correo() {
+    public String getCorreo() {
         return correo;
     }
 
-    public String numero() {
+    public String getNumero() {
         return numero;
     }
 
-    public byte edad() {
+    public byte getEdad() {
         return edad;
     }
-    
+
     
 }
