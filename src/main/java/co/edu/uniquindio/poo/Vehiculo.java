@@ -4,7 +4,7 @@ public abstract class Vehiculo {
     private final String modelo;
     private final String placa;
 
-    public String getPlaca(){
+    public String getPlaca() {
         return placa;
     }
 
@@ -17,4 +17,4 @@ public abstract class Vehiculo {
         this.placa = placa;
     }
 
-    }
+}

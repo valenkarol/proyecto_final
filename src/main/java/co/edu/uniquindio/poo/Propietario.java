@@ -49,5 +49,4 @@ public class Propietario {
         return edad;
     }
 
-    
 }
