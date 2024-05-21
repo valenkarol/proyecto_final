@@ -35,8 +35,8 @@ Facultad de Ingeniería
 
 <div style="position: absolute; left: 45%; top:20%; background-color: rgb(212, 231, 205); width: 550px">
 <b>
-Problema: <br />
-El arquitecto de parques infantiles<br />
+Problema proyecto final: <br />
+Administración de un Parqueadero<br />
 </b>
 </div>
 
@@ -55,73 +55,20 @@ El arquitecto de parques infantiles<br />
   }
 </style>
 
-<div style="font-size: 20pt">
+<div style="font-size: 18pt">
 
-Raúl, un arquitecto de la ciudad de Armenia, está diseñando un conjunto de parques infantiles en un proyecto para la Gobernación del Quindío. El proyecto involucra el diseño de al menos un parque por cada uno de los  municipios del departamento: Armenia, Calarcá, Montenegro, Quimbaya, La Tebaida, Circasia, Filandia, Génova, Salento, Pijao, Córdoba y Buenavista.
-
-La idea del gobernador es que el proyecto promueva la recreación y el deporte, así como también las matemáticas. Por eso, ha encargado al arquitecto que los diseños incluyan diferentes zonas en forma de figuras geométricas (círculos, rectángulos, cuadrados y triángulos rectángulos). La superficie de cada zona (área) puede ser de uno de los siguientes materiales: arena, grama sintética, grama natural o asfalto. 
-
-Cada material tiene un valor por metro cuadrado y cada municipio tiene un sobre costo asociado. 
-
----
-
-<style scoped>
-.texto:after {
-    content: 'Problema:';
-  }
-
-  div { columns: 2 }
-</style>
-
-<div style="font-size: 12pt;">
-
-
-| Material                                | Valor por metro cuadrado                                          |
-|---------------------------------------|-----------------------------------------------------------|
-| Arena | $10.0000  |
-| Grama sintética | $35.0000  |
-| Grama natural | $20.0000  |
-| Asfalto | $40.0000  | 
-
-
-
-| Municipio                                | Sobrecosto                                          |
-|---------------------------------------|-----------------------------------------------------------|
-| Armenia | $0  |
-| Calarcá| $10.0000  |
-| Montenegro | $20.0000  |
-| Quimbaya | $30.0000  | 
-| Tebaida | $15.0000  | 
-| Circasia | $18.0000  | 
-| Filandia | $22.0000  | 
-| Génova | $70.0000  | 
-| Salento | $50.0000  | 
-| Pijao | $40.0000  | 
-| Córdoba | $30.0000  | 
-| Buenavista | $35.0000  | 
-
----
-
-<style scoped>
-.texto:after {
-    content: 'Problema:';
-  }
-</style>
-
-<div style="font-size: 20pt">
-
-
-Raúl necesita de una aplicación que le permita consultar la información del proyecto:
-
-- todos los parques diseñados (ordenados por valor total de forma ascendente)
-- Un parque determinado (dado su nombre)
-- Los parques de un municipio (por nombre del municipio)
-
-La información de cada parque debe ser: nombre del parque, descripción, zonas con nombre, material y una determinada forma.
-
-Es importante calcular el valor de todo el proyecto.
-
-La aplicación debe impedir usar medidas negativas para las zonas, así como tener nombre repetido en zonas en el mismo parque o entre parques.
+Se desea desarrollar una aplicación para la administración eficiente de un parqueadero. El
+parqueadero cuenta con un número n de puestos, cada uno identificado por una posición
+única (i, j). Cada puesto puede estar ocupado por un vehículo, que puede ser de tipo moto
+(clásica o híbrida) o carro, y debe tener una placa, un modelo y un propietario registrado en el
+sistema.
+Para las motos, se debe registrar también su velocidad máxima, ya que el parqueadero es
+frecuentado por compradores de motos usadas interesados en conocer este dato. Un vehículo
+solo puede ocupar un puesto a la vez, por lo que se debe verificar la disponibilidad del puesto
+antes de ubicar un vehículo en él.
+El sistema debe llevar un registro completo de todos los vehículos que han parqueado en el
+establecimiento, incluyendo información sobre el puesto ocupado y el momento de ingreso.
+Además, debe permitir la identificación del propietario de un vehículo ubicado en un puesto.
 
 ---
 
@@ -130,16 +77,54 @@ La aplicación debe impedir usar medidas negativas para las zonas, así como ten
     content: 'Abstracción: ¿Qué se solicita finalmente? (problema)';
   }
 </style>
-
+<div style="font-size: 18pt">
 Sistema que permita :
 
-- Adicionar parques al proyecto (sin repetir nombres)
-- Adicionar zonas a un parque (sin repetir nombres de zonas en el parque)
-- Listar todos los parques diseñados ordenados por valor total de forma ascendente.
-- Obtener un parque dado su nombre
-- Obtener los parques de un municipio (por nombre del municipio)
-- Calcular el valor de todo el proyecto
-- Impedir el uso de medidas negativas
+● El sistema debe permitir la creación de un parqueadero con un número de puestos.
+● Cada puesto debe tener una posición (i, j) y puede estar ocupado por un vehículo.
+● Un vehículo puede ser de tipo moto (clásica o híbrida) o carro, y debe tener una placa,
+un modelo y un propietario.
+● Si el vehículo es una moto, se debe registrar su velocidad máxima.
+● El sistema debe permitir verificar si un puesto está ocupado por un vehículo y si un
+puesto está disponible.
+● El sistema debe llevar un registro de todos los vehículos que han parqueado en el
+parqueadero.
+● Se debe poder identificar al propietario de un vehículo ubicado en un puesto dado.
+
+---
+
+<style scoped>
+.texto:after {
+    content: 'Abstracción: ¿Qué se solicita finalmente? (problema)';
+  }
+</style>
+<div style="font-size: 18pt">
+● El sistema debe llevar un registro de todos los ingresos al parqueadero, incluyendo el
+puesto ocupado y el vehículo ubicado en el mismo.
+
+● Un puesto solo puede estar ocupado por un vehículo a la vez.
+● Un vehículo solo puede ocupar un puesto en un momento dado.
+● Para que un vehículo se ubique en un puesto, el puesto debe estar vacío.
+● Se debe establecer una tarifa por hora de uso del parqueadero para cada tipo de
+vehículo (moto clásica, moto híbrida y carro).
+● El sistema debe calcular el costo total de estacionamiento de un vehículo basado en el
+tiempo de uso y la tarifa por hora correspondiente a su tipo.
+
+---
+
+<style scoped>
+.texto:after {
+    content: 'Abstracción: ¿Qué se solicita finalmente? (problema)';
+  }
+</style>
+<div style="font-size: 18pt">
+● Se debe permitir que el administrador del parqueadero pueda configurar las tarifas por
+hora para cada tipo de vehículo.
+
+● El sistema debe ser capaz de generar un reporte diario y mensual del dinero recaudado
+en el parqueadero.
+● El reporte diario debe incluir el total recaudado en ese día, desglosado por tipo de
+vehículo (moto clásica, moto híbrida, carro).
 
 ---
 
@@ -152,11 +137,14 @@ Sistema que permita :
 
 <div style="font-size: 15pt;">
 
-- **Parque**:
+- **Parqueadero**:
   - nombre: Texto
+  - cantidad filas: Entero
+  - cantidad columnas: Entero
+  - hashTable: Tabla Hash
 
-- **ZonaParque**:
-  - nombre: Texto
+- **Puesto**:
+  - nom0ol: Texto
 
 - **Material**:
   - ARENA(10000.0)
@@ -301,22 +289,26 @@ Sistema que permita :
 
 <div style="font-size: 12pt;">
 
-Clase: **Circulo**
+Clase: **Registro**
 
 | Prueba                                | Entrada de datos                                          | Salida (Resultado)                                                                                  |
 |---------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| Área de un círculo de radio positivo | Se crea un círculo de radio 10 y se obtiene su área| Se obtiene un área de 314.159 |
-| Área de un círculo de radio negativo | Se intenta crea un círculo de radio -10 y se obtiene su área| Error, no es posible crear un círculo de radio negativo |
+| Datos completos  | Se crea un círculo de radio 10 y se obtiene su área| Se obtiene un área de 314.159 |
+| Listado semanal | Se intenta crea un círculo de radio -10 y se obtiene su área| Error, no es posible crear un círculo de radio negativo |
+| Listado mensual |  |  |
+| Datos negativos |  |  |
+| Obtener el puesto de un vehículo | | |
 
 
 
-Clase: **Rectangulo**
+
+Clase: **Parqueadero**
 
 | Prueba                                | Entrada de datos                                          | Salida (Resultado)                                                                                  |
 |---------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| Área de un rectángulo de ancho y alto positivos | Se crea un rectángulo con ancho 10 y alto 20, luego se obtiene su área| Se obtiene un área de 200.0 |
-| Área de un rectángulo de ancho negativo y alto positivo | Se intenta crea un rectángulo con ancho -10 y alto 20, luego se obtiene su área| Error, no se puede crear un rectángulo con un ancho negativo |
-| Área de un rectángulo de ancho positivo y alto negativo | Se intenta crea un rectángulo con ancho 10 y alto -20, luego se obtiene su área| Error, no se puede crear un rectángulo con un alto negativo |
+| Datos completos | Se crea un rectángulo con ancho 10 y alto 20, luego se obtiene su área| Se obtiene un área de 200.0 |
+| Creación del parqueadero | Se intenta crea un rectángulo con ancho -10 y alto 20, luego se obtiene su área| Error, no se puede crear un rectángulo con un ancho negativo |
+| Conocer el propietario por la busca de un vehículo | Se intenta crea un rectángulo con ancho 10 y alto -20, luego se obtiene su área| Error, no se puede crear un rectángulo con un alto negativo |
 
 
 </div>

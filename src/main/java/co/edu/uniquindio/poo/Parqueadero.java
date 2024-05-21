@@ -25,9 +25,9 @@ public class Parqueadero {
     }
 
     public void addPuesto(int i, int j, Puesto posicion){
-        posicion.put("(" + i + ", " + j + ")", b);
+        posicion.put("(" + i + ", " + j + ")", posicion);
 
-        var c = posicion.get
+        
 
 
     }
