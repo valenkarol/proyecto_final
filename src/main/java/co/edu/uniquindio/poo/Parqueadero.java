@@ -25,12 +25,12 @@ public class Parqueadero {
     }
 
     public void addPuesto(int i, int j, Puesto posicion){
-        posicion.put("(" + i + ", " + j + ")", posicion);
-
+        String clave="(" + i + ", " + j + ")";
+        this.posicion.put(clave, posicion);
         
-
-
     }
+
+    
 
     
 }
