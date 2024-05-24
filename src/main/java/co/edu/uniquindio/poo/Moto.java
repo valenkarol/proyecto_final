@@ -5,7 +5,11 @@ public class Moto extends Vehiculo {
 
     public Moto(String modelo, String placa, int velocidad) {
         super(modelo, placa);
+
+        assert velocidad > 0 : "Error, no se puede ingresar una velocidad negativa";
+
         this.velocidad = velocidad;
+
     }
 
     public int getVelocidad() {
