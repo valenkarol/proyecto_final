@@ -62,6 +62,6 @@ public class PropietarioTest {
         assertThrows(Throwable.class,
                 () -> new Propietario("julian", "gutierrez", "1004915388", "jugutier", "3124874139", (byte) 51));
 
-        LOG.info("finalozación test CorreoInvalido");
+        LOG.info("finalización test CorreoInvalido");
     }
 }
