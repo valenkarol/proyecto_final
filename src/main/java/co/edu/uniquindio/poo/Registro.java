@@ -2,18 +2,37 @@ package co.edu.uniquindio.poo;
 
 import java.time.LocalDateTime;
 
-public record Registro(LocalDateTime fechaIngreso, LocalDateTime fechaSalida) {
-    public Registro {
-        assert fechaIngreso != null;
-        assert fechaSalida != null;
+public class Registro {
+    private LocalDateTime fechaEntrada;
+    private LocalDateTime fechaSalida;
+    private final Vehiculo vehiculo;
+    private final Puesto puesto;
+
+    public Registro(LocalDateTime fechaEntrada, LocalDateTime fechaSalida, Vehiculo vehiculo, Puesto puesto){
+        this.fechaEntrada=fechaEntrada;
+        this.fechaSalida=fechaSalida;
+        this.vehiculo=vehiculo;
+        this.puesto=puesto;
     }
 
-    public LocalDateTime fechaIngreso() {
-        return fechaIngreso;
+    public LocalDateTime getFechaEntrada() {
+        return fechaEntrada;
     }
 
-    public LocalDateTime fechaSalida() {
+    public LocalDateTime getFechaSalida() {
         return fechaSalida;
     }
+
+    public Vehiculo getVehiculo() {
+        return vehiculo;
+    }
+
+    public Puesto getPuesto() {
+        return puesto;
+    }
+    public void calcularCosto(LocalDateTime fechaEntrada, LocalDateTime fechaSalida, Puesto puesto){
+        
+    }
+    
 
 }
