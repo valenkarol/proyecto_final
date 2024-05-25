@@ -135,7 +135,7 @@ vehículo (moto clásica, moto híbrida, carro).
 
 </style>
 
-<div style="font-size: 15pt;">
+<div style="font-size: 14pt;">
 
 - **Parqueadero**:
   - nombre: Texto
@@ -144,14 +144,38 @@ vehículo (moto clásica, moto híbrida, carro).
   - hashTable: Tabla Hash
 
 - **Puesto**:
-  - nom0ol: Texto
+  - posicion: Texto
 
-- **Material**:
-  - ARENA(10000.0)
-  - GRAMA_SINTETICA(35000.0)
-  - GRAMA_NATURAL(20000.0)
-  - ASFALTO(40000.0)]
+- **Estado de un puesto**:
+  - OCUPADO
+  - LIBRE
 
+- **Vehiculo**:
+  - Modelo: Texto
+  - Placa: Texto
+---
+
+<style scoped>
+.texto:after {
+    content: 'Abstracción: ¿Qué información es relevante dado el problema anterior?';
+  }
+</style>
+
+<div style="font-size: 14pt;">
+
+- **Carro**:
+  - modelo: Texto
+  - Placa: Texto
+
+- **Moto**:
+  - modelo: Texto
+  - Placa: Texto
+  - Velocidad: Entero
+
+- **PRECIO**:
+  - CARRO (3.000)
+  - CLÁSICA (2.500)
+  - HÍBRIDA (2.700)
 ---
 
 <style scoped>
@@ -162,40 +186,18 @@ vehículo (moto clásica, moto híbrida, carro).
 
 <div style="font-size: 15pt;">
 
-- **Municipio**:
-  - ARMENIA(0.0)
-  - CALARCA(10000.0)
-  - MONTENEGRO(20000.0)
-  - QUIMBAYA(30000.0)
-  - TEBAIDA(15000.0)
-  - CIRCASIA(18000.0)
-  - FILANDIA(22000.0)
-  - GÉNOVA(70000.0)
-  - SALENTO(50000.0)
-  - PIJAO(40000.0)
-  - CORDOBA(30000.0)
-  - BUENAVISTA(35000.0)
+- **Propietario**:
+  - nombre: Texto
+  - apellido: Texto
+  - numero identificación: Texto
+  - correo: Texto
+  - numero celular: Texto
+  - edad: Entero
 
----
+- **Registro**:
+  - fecha ingreso: Fecha
+  - fecha salida: Fecha
 
-<style scoped>
-.texto:after {
-    content: 'Abstracción: ¿Qué información es relevante dado el problema anterior?';
-  }
-</style>
-
-<div style="font-size: 15pt;">
-
-- **Circulo**:
-  - radio: Real
-
-- **Rectangulo**:
-  - ancho: Real
-  - alto: Real
-
-- **TrianguloRectangulo**:
-  - base: Real
-  - altura: Real
 
 ---
 

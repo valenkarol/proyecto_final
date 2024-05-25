@@ -2,13 +2,18 @@ package co.edu.uniquindio.poo;
 
 import java.time.LocalDateTime;
 
-public record Registro(LocalDateTime fecha) {
+public record Registro(LocalDateTime fechaIngreso, LocalDateTime fechaSalida) {
     public Registro {
-        assert fecha != null;
+        assert fechaIngreso != null;
+        assert fechaSalida != null;
     }
 
-    public LocalDateTime fecha() {
-        return fecha;
+    public LocalDateTime fechaIngreso() {
+        return fechaIngreso;
+    }
+
+    public LocalDateTime fechaSalida() {
+        return fechaSalida;
     }
 
 }
