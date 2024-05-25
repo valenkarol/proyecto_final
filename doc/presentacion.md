@@ -208,9 +208,9 @@ vehículo (moto clásica, moto híbrida, carro).
   }
 </style>
 
-<div style="position: absolute; left: 10%; top:15%; ">
+<div style="position: absolute; left: 15%; top:15%; ">
 
-![width:1050](diagrama-00.svg)
+![width:800](diagrama-00.svg)
 </div>
 
 ---
@@ -224,17 +224,16 @@ vehículo (moto clásica, moto híbrida, carro).
 
 <div style="font-size: 19pt;">
 
-- **ProyectoGobernacion**
-  - Almacenar un parque
-  - Recuperarla información de un parque dado el nombre
-  - Obtener parques de los municipios
-  - Obtener parques ordenados por valor ascendente
-  - Calcular el valor de todo el proyecto
+- **Parqueadero**
+  - Agregar un vehículo al parqueadero
+  - Recuperar el nombre de un propietario a partir de la búsqueda de un vehículo
+  - Generar un reporte diario de los costos del parqueadero desglosado por cada costo generado por vehículo
+  - Generar un reporte mensual de los costos generados del parqueadero
+  - Calcular el valor a pagar por el servicio de parqueadero
 
-- **ParqueInfantil**
-  - Obtener la información del parque (nombre y descripción)
-  - Adicionar / Recuperar zona del parque
-  - Calcular el valor del parque
+- **Precio**
+  - Permitir el ingreso del valor a pagar por cada vehículo
+  - Permitir la actualización de los valores a pagar por cada vehículo
 
 ---
 
@@ -244,12 +243,10 @@ vehículo (moto clásica, moto híbrida, carro).
   }
 </style>
 
-- **ZonaParque**
-  - Obtener la información de la zona (nombre y material)
-  - Calcular el valor de la zona
+- **Registro**
+  - llevar un registro de los vehiculos ingresados
 
-- **FiguraGeométrica** (**Circulo**, **Rectangulo**, **Cuadradro** y **TruanguloRectangulo**)
-  - Calcular área de la figura específica
+
   
 ---
 
