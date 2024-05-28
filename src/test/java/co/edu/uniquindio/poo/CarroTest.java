@@ -26,12 +26,12 @@ public class CarroTest {
         
     // Verificamos que el carro no sea nulo
     @Test
-    public void DatosNulos(){
-        LOG.info("Inicio DatosNulos");
+    public void DatosNulos() {
+        LOG.info("iniciación test DatosNulos");
 
-        assertThrows(Throwable.class, ()-> new Carro(null, null, null));
+        assertThrows(Throwable.class, () -> new Carro(null, null, null));
 
-        LOG.info("finalizar DatosNulos");
+        LOG.info("finalización test DatosNulos");
     }
 
     //prueba tarifa por hora del carro

@@ -16,9 +16,10 @@ public class Carro extends Vehiculo {
      */
     public Carro(String placa, String modelo, Propietario propietario) {
         super(placa, modelo, propietario);
-   
 
-       
+        assert placa != null && !placa.isBlank() : "El nombre debe ser diferente de null";
+        assert modelo != null && !modelo.isBlank() : "El apellido debe ser diferente de null";
+        assert propietario != null : "El número de identificación debe ser diferente de null";
 
     }
 
