@@ -36,9 +36,17 @@ public class Registro {
         return puesto;
     }
     
-    public void calcularCosto(LocalDateTime fechaEntrada, LocalDateTime fechaSalida, Puesto puesto){
-        
-    }
-    
+    public double calcularCosto() {
+        long minutosEstacionamiento = calcularMinutosEstacionamiento();
+        double tarifaPorHoraCarro = 0.0;
 
-}
+        for (Vehiculo vehiculo : carro) {
+    
+        } 
+        }
+
+        double costoTotal = (minutosEstacionamiento / 60.0) * tarifaPorHora;
+        return costoTotal;
+    }
+
+    
