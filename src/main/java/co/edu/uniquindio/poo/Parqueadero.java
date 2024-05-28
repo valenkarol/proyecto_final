@@ -278,4 +278,6 @@ public class Parqueadero {
         System.out.println("Total recaudado: " + totalRecaudadoMensual);
         totalRecaudadoMensual = 0; // Reset mensual
     }
+
+    
 }
