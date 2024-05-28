@@ -5,7 +5,7 @@ package co.edu.uniquindio.poo;
  * Esta clase hereda de la clase Vehiculo y añade una tarifa por hora específica para los carros.
  */
 public class Carro extends Vehiculo {
-    private static final String Carro = null;
+    private static String Carro ;
     private static double tarifaPorHora;
 
     /**
