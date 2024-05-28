@@ -6,12 +6,8 @@ package co.edu.uniquindio.poo;
  * Esta clase debe ser extendida por tipos específicos de vehículos, que deben implementar el método abstracto getTarifaPorHora().
  */
 public abstract class Vehiculo {
-
-    // Placa del vehículo.
     private final String placa;
-    // Modelo del vehículo.
     private final String modelo;
-    // Propietario del vehículo.
     private final Propietario propietario;
 
     /**

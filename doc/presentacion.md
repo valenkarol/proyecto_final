@@ -138,17 +138,12 @@ vehículo (moto clásica, moto híbrida, carro).
 <div style="font-size: 14pt;">
 
 - **Parqueadero**:
-  - nombre: Texto
   - cantidad filas: Entero
   - cantidad columnas: Entero
-  - hashTable: Tabla Hash
 
 - **Puesto**:
-  - posicion: Texto
-
-- **Estado de un puesto**:
-  - OCUPADO
-  - LIBRE
+  - posicion i: Entero
+  - posicion j: Entero 
 
 - **Vehiculo**:
   - Modelo: Texto
@@ -166,16 +161,18 @@ vehículo (moto clásica, moto híbrida, carro).
 - **Carro**:
   - modelo: Texto
   - Placa: Texto
+  - tarifa: Real
 
 - **Moto**:
   - modelo: Texto
   - Placa: Texto
   - Velocidad: Entero
+  - tarifa: Real
 
-- **PRECIO**:
-  - CARRO (3.000)
-  - CLÁSICA (2.500)
-  - HÍBRIDA (2.700)
+- **Tarifa**
+  - tarifa de carro: Real
+  - tarifa de moto clasica: Real
+  - tarifa de moto hibrida: Real
 ---
 
 <style scoped>
@@ -225,15 +222,15 @@ vehículo (moto clásica, moto híbrida, carro).
 <div style="font-size: 19pt;">
 
 - **Parqueadero**
+  - crear un parqueadero
   - Agregar un vehículo al parqueadero
   - Recuperar el nombre de un propietario a partir de la búsqueda de un vehículo
   - Generar un reporte diario de los costos del parqueadero desglosado por cada costo generado por vehículo
   - Generar un reporte mensual de los costos generados del parqueadero
   - Calcular el valor a pagar por el servicio de parqueadero
 
-- **Precio**
-  - Permitir el ingreso del valor a pagar por cada vehículo
-  - Permitir la actualización de los valores a pagar por cada vehículo
+- **Registro**
+  - calcular el valor por duración de aparcamiento de los vehiculos
 
 ---
 
@@ -243,8 +240,11 @@ vehículo (moto clásica, moto híbrida, carro).
   }
 </style>
 
-- **Registro**
-  - llevar un registro de los vehiculos ingresados
+- **Puesto**
+  - verificar la disponibilidad de un puesto
+
+- **Tarifa**
+  - calcular el valor individual de cada vehiculo 
 
 
   
@@ -286,58 +286,32 @@ vehículo (moto clásica, moto híbrida, carro).
   }
 </style>
 
-<div style="font-size: 12pt;">
+<div style="font-size: 10pt;">
 
-Clase: **Registro**
-
-| Prueba                                | Entrada de datos                                          | Salida (Resultado)                                                                                  |
-|---------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| Datos completos  | Se crea un círculo de radio 10 y se obtiene su área| Se obtiene un área de 314.159 |
-| Listado semanal | Se intenta crea un círculo de radio -10 y se obtiene su área| Error, no es posible crear un círculo de radio negativo |
-| Listado mensual |  |  |
-| Datos negativos |  |  |
-| Obtener el puesto de un vehículo | | |
-
-
-
-
-Clase: **Parqueadero**
+Clase: **Propietario**
 
 | Prueba                                | Entrada de datos                                          | Salida (Resultado)                                                                                  |
 |---------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| Datos completos | Se crea un rectángulo con ancho 10 y alto 20, luego se obtiene su área| Se obtiene un área de 200.0 |
-| Creación del parqueadero | Se intenta crea un rectángulo con ancho -10 y alto 20, luego se obtiene su área| Error, no se puede crear un rectángulo con un ancho negativo |
-| Conocer el propietario por la busca de un vehículo | Se intenta crea un rectángulo con ancho 10 y alto -20, luego se obtiene su área| Error, no se puede crear un rectángulo con un alto negativo |
+| Datos Completos | propietario("julian", "gutierrez", "1004915388", "jugutier@gmail.com", "3124874139", 51)|Propietario creado Propietario("julian", "gutierrez", "1004915388", "jugutier@gmail.com", "3124874139", 51) |
+| Con datos nulos | Propietario(null,null,null,null,null, 51) | Error, faltan datos para la creación del propietario |
+| Datos vacíos | Propietario("", "", "1004915388", "jugutier@gmail.com", "", 51)| Error, faltan datos para la creación del propietario |
+| Edad negativa | Propietario("julian", "gutierrez", "1004915388", "jugutier@gmail.com", "3124874139", -51) |Error, la edad no pueden ser negativos                      |
+| Correo inválido | Propietario("julian", "gutierrez", "1004915388", "jugutier", "3124874139", 51)  | Error, el correo del propietario es invalido         |
+
+
+
+Clase: **Puesto**
+
+| Prueba                                | Entrada de datos                                          | Salida (Resultado)                                                                                  |
+|---------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| Datos completos | Se crea un puesto correcto (2, 2)       | Puesto creado (2,2) |
+| Datos negativos | Se crea un puesto incorrecto  (-2,-2)      | Error, no se puede crear un puesto con valores negativos  |
+|
 
 
 </div>
 
 
----
-
-<style scoped>
-.texto:after {
-    content: 'Descomposición: ¿Qué debo hacer para probar las funcionalidades?';
-  }
-</style>
-
-<div style="font-size: 12pt;">
-
-Clase: **Cuadrado**
-
-| Prueba                                | Entrada de datos                                          | Salida (Resultado)                                                                                  |
-|---------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| Área de un cuadrado de lado positivo | Se crea un cuadrado de lado 10, luego se obtiene su área| Se obtiene un área de 100.0 |
-| Área de un cuadrado de lado negativo | Se intenta crea un cuadrado de lado -10, luego se obtiene su área| Error, no se puede crear un cuadrado con lado negativo |
-
-
-Clase: **TrianguloRectangulo**
-
-| Prueba                                | Entrada de datos                                          | Salida (Resultado)                                                                                  |
-|---------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| Área de un triángulo rectángulo de base y altura positivas | Se crea un triángulo rectángulo con base 10 y altura 20, luego se obtiene su área| Se obtiene un área de 100.0 |
-| Área de un triángulo rectángulo de base negativo y altura positivo | Se intenta crea un triángulo rectángulo con base -10 y altura 20, luego se obtiene su área| Error, no se puede crear un triángulo rectángulo con una base  negativa |
-| Área de un triángulo rectángulo de base positiva y altura negativa | Se intenta crea un triángulo rectángulo con base 10 y altura -20, luego se obtiene su área| Error, no se puede crear un triángulo rectángulo de altura negativa  negativa |
 
 ---
 
@@ -349,14 +323,15 @@ Clase: **TrianguloRectangulo**
 
 <div style="font-size: 12pt;">
 
-Clase: **ZonaParque**
+Clase: **Parqueadero**
 
 | Prueba                                | Entrada de datos                                          | Salida (Resultado)                                                                                  |
 |---------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| Valor de una zona circular en arena | Se crea una zona circular de radio 10 en material de area con nombre "Zona 1" y se obtiene su valor| Se obtiene un valor de 3141592.65 |
-| Valor de una zona rectangular en grama sintética | Se crea una zona  rectangular con ancho 10 y alto 20 y de material de grama sintética con nombre "Zona 1", luego se obtiene su valor| Se obtiene un área de 7000000.0 |
-| Valor de una zona cuadrada en grama natural | Se crea una zona cuadrada con lado de 10 y de material de grama natural con nombre "Zona 1", luego se obtiene su valor| Se obtiene un área de 2000000.0 |
-| Valor de una zona en forma de triángulo rectángulo en asfalto | Se crea una zona en forma de triángulo rectángulo con base de 10 y altura 20, además en material de asfalto con nombre "Zona 1", luego se obtiene su valor| Se obtiene un área de 4000000.0 |
+| Verificar disponibilidad | Se creo un puesto (1,1) y se verifica su diponibilidad| Se obtiene un puesto ocupado o un puesto vacío |
+| Ubicar vehiculo | Se crea un puesto, un propietario y un vehiculo y se le asigna| Se obtiene un vehiculo ubicado |
+| Identificar propietario | Se crea un propietario, un vehiculo y se ubica en un puesto, luego se pregunta por el nombre del carro parqueado| Se obtiene el nombre del propietario |
+| Liberar puesto | Se crea un vehiculo y se ubica en un puesto, para poder retirarlo| Se obtiene un puesto libre  |
+| Generar reporte diario | Se crean los tres tipos de vehiculo y se ubican en el parqueadero, luego se retiran y se genera el registro diario  | Se obtiene un registro con los tres vehiculos ingresados |
 
 ---
 
@@ -368,33 +343,13 @@ Clase: **ZonaParque**
 
 <div style="font-size: 12pt;">
 
-Clase: **ParqueInfantil**
+Clase: **Parqueadero**
 
 | Prueba                                | Entrada de datos                                          | Salida (Resultado)                                                                                  |
 |---------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| Parque infantil con nombre nulo | Se intenta crear un parque infantil con nombre nulo| Error, no se puede crear un parque infantil de nombre nulo |
-| Parque infantil con nombre vacío | Se intenta crear un parque infantil con nombre vacío| Error, no se puede crear un parque infantil de nombre vacío |
-| Parque infantil con descripción nula | Se intenta crear un parque infantil con descripción nula| Error, no se puede crear un parque infantil con  descripción nula |
-| Parque infantil con descripción vacía | Se intenta crear un parque infantil con descripción vacía| Error, no se puede crear un parque infantil con descripción vacía |
-| Valor de un parque infantil con datos válidos pero sin zonas | Se crea un parque infantil ( "Mi primer recuerdo", "Parque para los primero años de edad", Calarca ), luego se obtiene el valor del parque |  Se obtiene 10000.0  (sobrecosto)|
+| Generar reporte mensual | Se crean los tres tipos de vehiculos y se ubican en el parqueadero para posteriormente retirarlos| se genera un reporte en el lapso de un mes donde debe aparecer los tres vehiculos parqueados |
+| Datos negativos | Se intenta crear un parqueadero con valor negativo (-1)| Error, no es posible crear un parqueadero con un valor negativo |
 
----
-
-<style scoped>
-.texto:after {
-    content: 'Descomposición: ¿Qué debo hacer para probar las funcionalidades?';
-  }
-</style>
-
-<div style="font-size: 12pt;">
-
-Clase: **ParqueInfantil**
-
-| Prueba                                | Entrada de datos                                          | Salida (Resultado)                                                                                  |
-|---------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| Valor de un parque infantil con datos válidos y una zona circular | Se crea un parque infantil ( "Mi primer recuerdo", "Parque para los primero años de edad", Calarca ), luego se le adiciona una zona circular de radio 10 en material de arena y de nombre "Zona de mascotas", luego se obtiene el valor del parque |  Se obtiene 3151592.65 |
-| Valor de un parque infantil con datos válidos y cuatro zonas una por cada forma | Se crea un parque infantil ( "Mi primer recuerdo", "Parque para los primero años de edad", Calarca ), luego se le adiciona: una zona circular de radio 10 en material de area y de nombre "Zona de mascotas", una zona  rectangular con ancho 10 y alto 20 y de material de grama sintética, zona cuadrada con lado de 10 y de material de grama natural, zona en forma de triángulo rectángulo con base de 10 y altura 20, además en material de arena; finalmente se obtiene el valor del parque | Se obtiene 13151592.65 |
-| Parque infantil con dos zonas con el mismo nombre | Se crea un parque infantil ( "Mi primer recuerdo", "Parque para los primero años de edad", Calarca ), luego se le adiciona una zona circular de radio 10 en material de area y de nombre "Zona de mascotas", luego intenta adicionar otra zona (independiente de la forma) con el mismo nombre | Error, no se pueden tener dos zonas con el mismo nombre  |
 
 
 ---
@@ -407,33 +362,32 @@ Clase: **ParqueInfantil**
 
 <div style="font-size: 12pt;">
 
-Clase: **ProyectoGobernacion**
+Clase: **Moto**
 
 | Prueba                                | Entrada de datos                                          | Salida (Resultado)                                                                                  |
 |---------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| Valor de proyecto que no tiene parques | Se crea un proyecto de la gobernación sin parques, luego se solicita el valor del proyecto | Se obtiene 0.0|
-| Se obtiene un parque por el nombre | Se adiciona al proyecto de la gobernación un parque infantil ( "Mi primer recuerdo", "Parque para los primero años de edad", Calarca ), luego solicita la información del parque  "Mi primer recuerdo" | Se obtiene toda la información del parque  ( "Mi primer recuerdo", "Parque para los primero años de edad", Calarca ) |
-| Se intenta obtener un parque inexistente | se solicita la información del parque  "Mi recuerdo"  (sin que exista) | Error, no existe un parque con ese nombre |
-| Parques con el  mismo nombre | Se adiciona al proyecto de la gobernación un parque infantil ( "Mi primer recuerdo", "Parque para los primero años de edad", Calarca ), luego intenta adicionar otro parque pero con el mismo nombre | Error, no se pueden adicionar dos parques con el mismo nombre |
+| Datos completos | Se crea una moto ("def456", "kawasaki", propietario, TipoMoto."", 200.0)|  Se obtiene ("def456", "kawasaki", propietario, TipoMoto."", 200.0)|
+| Datos negativos | Se crea una moto ("def456", "kawasaki", propietario, TipoMoto."", -200.0) | Error, no es posible crear na moto con verocidad negativa |
+
+
+Clase: **carro**
+| Prueba                                | Entrada de datos                                          | Salida (Resultado)                                                                                  |
+|---------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| Datos completos | Se crea un carro ("abc123", "chevrolet", propietario) | Se obtiene ("abc123", "chevrolet", propietario)
+| Datos null | se crea un carro (null, null, null) | Error, no es posible crear un carro con datos nulos |
+
 
 ---
-
 <style scoped>
 .texto:after {
-    content: 'Descomposición: ¿Qué debo hacer para probar las funcionalidades?';
+    content: 'Reconocimiento de patrones ';
   }
 </style>
 
-<div style="font-size: 12pt;">
+<div style="font-size: 25pt;">
 
-Clase: **ProyectoGobernacion**
+ - Se reutilizar las pruebas hechas para estudiante en el problema 01 del programa de programación 1 
 
-| Prueba                                | Entrada de datos                                          | Salida (Resultado)                                                                                  |
-|---------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| Un municipio sin parques| Se obtiene los parques del municipio de "GENOVA" (municipio sin parques en el sistema) | Se obtiene una lista vacía | 
-| Un municipio que no existe | Se obtiene los parques del municipio de "SEVILLA" | Se obtiene una lista vacía |
-| Parques de una municipio | Se crea un proyecto con los parques { "Pijao 1", "Cordoba 1", "Buenavista 1", "Pijao 2", "Cordoba 2", "Buenavista 2"}; luego se solicitan los parques de municipio "PIJAO"  | Se obtiene la lista { "Pijao 1", "Pijao 2"} |
-| Orden por valor, Dos parques por los últimos tres municipios del Quindío | Se crea un proyecto con los parques { "Pijao 1", "Cordoba 1", "Buenavista 1", "Pijao 2", "Cordoba 2", "Buenavista 2"}; luego se le adiciona a cada uno una zona cuadrada de asfalto de lado 15; y finalmente se solicitan los parques ordenados por valor ascendente  | Se obtiene la lista { "Cordoba 1", "Cordoba 2", "Buenavista 1", "Buenavista 2", , "Pijao 1", "Pijao 2"} |
 
 ---
 
@@ -449,9 +403,7 @@ Clase: **ProyectoGobernacion**
   - Recuperar datos de prueba de un estudiante. 
   - Verificar que los datos almacenados coinciden con los datos recuperados
 
-- **Cómo escribo la solución en Java?**
 
-  Ver la carpeta del *src* en el proyecto de **Visual Studio Code**
 
 
 
