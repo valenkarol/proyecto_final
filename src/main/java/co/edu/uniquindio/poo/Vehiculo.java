@@ -27,6 +27,8 @@ public abstract class Vehiculo {
         this.propietario = propietario;
     }
 
+    //Obtener los gets necesarios
+    
     /**
      * Obtiene la placa del vehículo.
      *

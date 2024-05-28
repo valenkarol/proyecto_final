@@ -1,28 +1,23 @@
 package co.edu.uniquindio.poo;
 
-package co.edu.uniquindio.poo;
-
 /**
  * La clase Moto representa un tipo de Vehiculo específico.
- * Esta clase hereda de la clase Vehiculo y añade propiedades y tarifas específicas para las motos.
+ * Esta clase hereda de la clase Vehiculo y añade propiedades y tarifas
+ * específicas para las motos.
  */
 public class Moto extends Vehiculo {
-    // El tipo de moto (CLASICA o HIBRIDA).
     private TipoMoto tipoMoto;
-    // La velocidad máxima de la moto.
     private double velocidadMaxima;
-    // Tarifa por hora para motos clásicas.
     private static double tarifaClasica;
-    // Tarifa por hora para motos híbridas.
     private static double tarifaHibrida;
 
     /**
      * Constructor de la clase Moto.
      *
-     * @param placa La placa de la moto.
-     * @param modelo El modelo de la moto.
-     * @param propietario El propietario de la moto.
-     * @param tipoMoto El tipo de la moto (CLASICA o HIBRIDA).
+     * @param placa           La placa de la moto.
+     * @param modelo          El modelo de la moto.
+     * @param propietario     El propietario de la moto.
+     * @param tipoMoto        El tipo de la moto (CLASICA o HIBRIDA).
      * @param velocidadMaxima La velocidad máxima de la moto.
      */
     public Moto(String placa, String modelo, Propietario propietario, TipoMoto tipoMoto, double velocidadMaxima) {
@@ -32,6 +27,8 @@ public class Moto extends Vehiculo {
         this.velocidadMaxima = velocidadMaxima;
     }
 
+    //implementar gets
+    
     /**
      * Obtiene el tipo de moto.
      *
@@ -77,6 +74,10 @@ public class Moto extends Vehiculo {
      */
     @Override
     public double getTarifaPorHoraVehiculo() {
-        return tipoMoto == TipoMoto.CLASICA ? tarifaClasica : tarifaHibrida;
+        if (tipoMoto == TipoMoto.CLASICA) {
+            return tarifaClasica;
+        } else {
+            return tarifaHibrida;
+        }
     }
 }
