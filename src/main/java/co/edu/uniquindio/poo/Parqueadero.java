@@ -29,7 +29,7 @@ public class Parqueadero {
         this.totalRecaudadoMensual = 0;
 
         for (int i = 0; i < n; i=i+1) {
-            for (int j = 0; j < n; j=i+1) {
+            for (int j = 0; j < n; j=j+1) {
                 puestos[i][j] = new Puesto(i, j);
             }
         }
