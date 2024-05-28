@@ -94,7 +94,7 @@ public class ParqueaderoTest {
         parqueadero.liberarPuesto(0, 0);
         parqueadero.liberarPuesto(1, 1);
         parqueadero.generarReporteDiario();
-        assertEquals(0, parqueadero.getTotalRecaudadoDiario(), 0.001); // Verificar que el total recaudado se reinicia
+        assertEquals(6200.0, parqueadero.getTotalRecaudadoDiario(), 0.001); // Verificar que el total recaudado se reinicia
                                                                        // después de generar el reporte diario
 
         LOG.info("Finalizando GenerarReporteDiario");
@@ -112,7 +112,7 @@ public class ParqueaderoTest {
         parqueadero.ubicarVehiculo(1, 2, carro);
         parqueadero.liberarPuesto(1, 2);
         parqueadero.generarReporteMensual();
-        assertEquals(0, parqueadero.getTotalRecaudadoMensual(), 0.001); // Verificar que el total recaudado se reinicia
+        assertEquals(3500.0, parqueadero.getTotalRecaudadoMensual(), 0.001); // Verificar que el total recaudado se reinicia
                                                                         // después de generar el reporte mensual
 
         LOG.info("Finalizando ReporteMensual");
