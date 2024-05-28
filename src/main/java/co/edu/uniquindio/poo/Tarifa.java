@@ -1,13 +1,10 @@
 package co.edu.uniquindio.poo;
 
-public enum TipoVehiculo {
-    CARRO(2500),
-    CLASICA(1500),
-    HIBRIDA(2000);
+public class Tarifa {
 
     private double tarifa;
 
-    private TipoVehiculo(double tarifa) {
+    private Tarifa(double tarifa) {
         this.tarifa = tarifa;
     }
 
