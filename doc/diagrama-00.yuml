@@ -4,13 +4,13 @@
 
 
 
-[Parqueadero]
-[<<enum>>;ESTADOPUESTO|OCUPADO;LIBRE;]
+[Parqueadero|-cantidad fila y columnas: Entero]
+[Tarifa|-tarifa carro: Real,-tarifa moto clasica: Real;-tarica moto hibrida: Real]
 [<<abstract>>;Vehiculo|-modelo:Texto;-placa:Texto]
-[Puesto|-Posición:Texto]
+[Puesto|-Posición i: Entero;-Posición j: Entero]
 [Carro]
 [Moto|-velocidad: Entero]
-[<<enum>>;PRECIO|CARO(3000);HIBRIDA(2700);CLASICA(2500)]
+[<<enum>>; TipoMoto| CLASICA;HIBRIDA]
 [  Propietario  |-nombre: Texto;-apellidos: Texto;-id: Texto;-correo: Texto;-edad: Entero]
 [Registro|-fecha ingreso: Fecha;-fecha salida: Fecha]
 
@@ -18,10 +18,10 @@
 [Parqueadero]1-*>[Propietario]
 [Parqueadero]<>1-*>[Registro]
 [Parqueadero]<>1-*>[Puesto]
-[Puesto]->[<<enum>>;ESTADOPUESTO]
+[Tarifa]<->[<<abstract>>;Vehiculo]
 [Puesto]<->[Registro]
 [<<abstract>>;Vehiculo]->[Propietario]
 [Registro]->[<<abstract>>;Vehiculo]
-[<<abstract>>;Vehiculo]->[<<enum>>;PRECIO]
+[Moto]->[<<enum>>; TipoMoto]
 [<<abstract>>;Vehiculo]^-[Carro]
 [<<abstract>>;Vehiculo]^-[Moto]
