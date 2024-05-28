@@ -1,7 +1,7 @@
 package co.edu.uniquindio.poo;
 
 public class Carro extends Vehiculo {
-    private static double tarifaPorHora;
+    private static double tarifaHora;
     /**
      * método constructor de la clase carro
      */
