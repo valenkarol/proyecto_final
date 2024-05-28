@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 
 public class Registro {
@@ -13,6 +14,10 @@ public class Registro {
         this.fechaSalida=fechaSalida;
         this.vehiculo=vehiculo;
         this.puesto=puesto;
+    }
+    public long calcularMinutosEstacionamiento() {
+        Duration duration = Duration.between(fechaEntrada, fechaSalida);
+        return duration.toMinutes();
     }
 
     public LocalDateTime getFechaEntrada() {
@@ -30,6 +35,7 @@ public class Registro {
     public Puesto getPuesto() {
         return puesto;
     }
+    
     public void calcularCosto(LocalDateTime fechaEntrada, LocalDateTime fechaSalida, Puesto puesto){
         
     }
