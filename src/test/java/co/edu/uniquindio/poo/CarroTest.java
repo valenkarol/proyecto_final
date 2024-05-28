@@ -1,7 +1,7 @@
 package co.edu.uniquindio.poo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.logging.Logger;
 
@@ -11,37 +11,42 @@ public class CarroTest {
     private static final Logger LOG = Logger.getLogger(CarroTest.class.getName());
 
     @Test
-    public void testCrearCarro() {
+    public void CrearCarro() {
         LOG.info("Iniciando Test");
 
-        // Creamos un propietario
-        Propietario propietario = new Propietario("Juan", "123456789");
-        // Creamos un carro
-        Carro carro = new Carro("ABC123", "Toyota", propietario);
-        
-        // Verificamos que el carro no sea nulo
-        assertNotNull(carro);
-        
-        // Verificamos que los atributos del carro hayan sido inicializados correctamente
-        assertEquals("ABC123", carro.getPlaca());
-        assertEquals("Toyota", carro.getModelo());
+        var propietario = new Propietario("julian", "gutierrez", "1004915388", "jugutier@gmail.com", "3124874139", (byte)51);
+        var carro = new Carro("abc123", "chevrolet", propietario);
+
+        assertEquals("abc123", carro.getPlaca());
+        assertEquals("chevrolet", carro.getModelo());
         assertEquals(propietario, carro.getPropietario());
 
-        LOG.info("Finalizando Test");
+        LOG.info("Finalización CrearCarro");
+    }
+        
+    // Verificamos que el carro no sea nulo
+    @Test
+    public void DatosNulos(){
+        LOG.info("Inicio DatosNulos");
+
+        assertThrows(Throwable.class, ()-> new Carro(null, null, null));
+
+        LOG.info("finalizar DatosNulos");
     }
 
+    //prueba tarifa por hora del carro
     @Test
-    public void testGetTarifaPorHoraVehiculo() {
-        LOG.info("Iniciando Test");
+    public void TarifaHoraVehiculo() {
+        LOG.info("Iniciando TarifaHoraVehiculo");
 
-        // Creamos un propietario
-        Propietario propietario = new Propietario("Juan", "123456789");
-        // Creamos un carro
-        Carro carro = new Carro("ABC123", "Toyota", propietario);
+        var propietario = new Propietario("julian", "gutierrez", "1004915388", "jugutier@gmail.com", "3124874139", (byte)51);
+        var carro = new Carro("abc123", "chevrolet", propietario);
+       
         // Configuramos una tarifa por hora válida
-        Carro.setTarifaPorHora(15.0);
+        Carro.setTarifaPorHora(2000.0);
+
         // Verificamos que la tarifa por hora obtenida sea la misma que configuramos
-        assertEquals(15.0, carro.getTarifaPorHoraVehiculo(), 0.0);
+        assertEquals(2000.0, carro.getTarifaPorHoraVehiculo(), 0.0);
 
         LOG.info("Finalizando Test");
     }

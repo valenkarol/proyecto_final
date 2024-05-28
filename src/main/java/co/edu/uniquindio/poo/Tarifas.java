@@ -44,28 +44,16 @@ public class Tarifas {
 
     // Método para calcular el precio de la tarifa para moto
     public double calcularPrecioTarifaMoto(double horas, TipoMoto tipoMoto) {
-        switch (tipoMoto) {
-            case CLASICA:
-                return tarifaHoraMotoClasica * horas;
-            case HIBRIDA:
-                return tarifaHoraMotoHibrida * horas;
-            default:
-                System.out.println("Tipo de moto no válido");
-                return 0.0;
+        if (tipoMoto == TipoMoto.CLASICA) {
+            return tarifaHoraMotoClasica * horas;
+        } else if (tipoMoto == TipoMoto.HIBRIDA) {
+            return tarifaHoraMotoHibrida * horas;
+        } else {
+            System.out.println("Tipo de moto no válido");
+            return 0.0;
         }
     }
-
-    // Método main para probar la clase
-    public static void main(String[] args) {
-        Tarifas tarifas = new Tarifas(10.0, 5.0, 7.0);
-        double precioCarro = tarifas.calcularPrecioTarifaCarro(2);
-        double precioMotoClasica = tarifas.calcularPrecioTarifaMoto(2, TipoMoto.CLASICA);
-        double precioMotoHibrida = tarifas.calcularPrecioTarifaMoto(2, TipoMoto.HIBRIDA);
-        
-        System.out.println("Precio por 2 horas de carro: " + precioCarro);
-        System.out.println("Precio por 2 horas de moto clásica: " + precioMotoClasica);
-        System.out.println("Precio por 2 horas de moto híbrida: " + precioMotoHibrida);
-    }
 }
+
 
 
