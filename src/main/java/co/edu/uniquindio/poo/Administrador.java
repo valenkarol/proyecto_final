@@ -2,7 +2,7 @@ package co.edu.uniquindio.poo;
 
 public class Administrador {
     private final String nombre;
-    private double tarifaEstacionamiento; 
+    private double tarifaEstacionamiento;
 
     public Administrador(String nombre, double tarifaInicial) {
         assert nombre != null && !nombre.isBlank() : "El nombre debe ser diferente de null";
@@ -27,5 +27,3 @@ public class Administrador {
         return tarifaEstacionamiento;
     }
 }
-
-    
