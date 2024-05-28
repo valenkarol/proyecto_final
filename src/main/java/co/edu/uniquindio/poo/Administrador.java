@@ -2,30 +2,59 @@ package co.edu.uniquindio.poo;
 
 public class Administrador {
     private final String nombre;
-    private double tarifaEstacionamiento; 
+    private double tarifaEstacionamientoCarro;
+    private double tarifaEstacionamientoMotoH;
+    private double tarifaEstacionamientoMotoC;
 
-    public Administrador(String nombre, double tarifaInicial) {
+    public Administrador(String nombre, double tarifaInicialCarro, double tarifaInicialMotoH, double tarifaInicialMotoC) {
         assert nombre != null && !nombre.isBlank() : "El nombre debe ser diferente de null";
-        assert tarifaInicial > 0 : "La tarifa inicial debe ser mayor que 0";
+        assert tarifaInicialCarro > 0 : "La tarifa inicial para carro debe ser mayor que 0";
+        assert tarifaInicialMotoC > 0 : "La tarifa inicial para moto clásica debe ser mayor que 0";
+        assert tarifaInicialMotoH > 0 : "La tarifa inicial para moto híbrida debe ser mayor que 0";
 
         this.nombre = nombre;
-        this.tarifaEstacionamiento = tarifaInicial;
+        this.tarifaEstacionamientoCarro = tarifaInicialCarro;
+        this.tarifaEstacionamientoMotoH = tarifaInicialMotoH;
+        this.tarifaEstacionamientoMotoC = tarifaInicialMotoC;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    // Método para modificar la tarifa de estacionamiento
-    public void setTarifaEstacionamiento(double nuevaTarifa) {
-        assert nuevaTarifa > 0 : "La nueva tarifa debe ser mayor que 0";
-        tarifaEstacionamiento = nuevaTarifa;
+    public void setTarifaEstacionamientoCarro(double nuevaTarifaCarro) {
+        if (nuevaTarifaCarro > 0) {
+            this.tarifaEstacionamientoCarro = nuevaTarifaCarro;
+        } else {
+            System.out.println("La tarifa debe ser mayor que 0.");
+        }
     }
 
-    // Método para obtener la tarifa de estacionamiento actual
-    public double getTarifaEstacionamiento() {
-        return tarifaEstacionamiento;
+    public void setTarifaEstacionamientoMotoH(double nuevaTarifaMotoH) {
+        if (nuevaTarifaMotoH > 0) {
+            this.tarifaEstacionamientoMotoH = nuevaTarifaMotoH;
+        } else {
+            System.out.println("La tarifa debe ser mayor que 0.");
+        }
+    }
+
+    public void setTarifaEstacionamientoMotoC(double nuevaTarifaMotoC) {
+        if (nuevaTarifaMotoC > 0) {
+            this.tarifaEstacionamientoMotoC = nuevaTarifaMotoC;
+        } else {
+            System.out.println("La tarifa debe ser mayor que 0.");
+        }
+    }
+
+    public double getTarifaEstacionamientoCarro() {
+        return tarifaEstacionamientoCarro;
+    }
+
+    public double getTarifaEstacionamientoMotoH() {
+        return tarifaEstacionamientoMotoH;
+    }
+
+    public double getTarifaEstacionamientoMotoC() {
+        return tarifaEstacionamientoMotoC;
     }
 }
-
-    
