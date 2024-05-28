@@ -1,11 +1,8 @@
 package co.edu.uniquindio.poo;
 
 public class Puesto {
-    // Coordenada i (fila) del puesto en la matriz del parqueadero.
     private int i;
-    // Coordenada j (columna) del puesto en la matriz del parqueadero.
     private int j;
-    // Vehículo que ocupa el puesto, si está ocupado.
     private Vehiculo vehiculo;
 
     /**

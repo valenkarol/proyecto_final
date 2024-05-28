@@ -1,24 +1,18 @@
 package co.edu.uniquindio.poo;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Hashtable;
+import java.time.LocalDateTime;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * La clase Parqueadero gestiona los puestos de estacionamiento y los registros de entrada y salida de vehículos.
  * Permite verificar disponibilidad, ubicar vehículos, identificar propietarios y generar reportes diarios y mensuales de recaudación.
  */
 public class Parqueadero {
-    // Número de filas y columnas de puestos en el parqueadero.
     private int n;
-    // Matriz de puestos en el parqueadero.
     private Puesto[][] puestos;
-    // Lista de registros de vehículos estacionados.
-    private List<Registro> registros;
-    // Total recaudado diario.
+    private LinkedList<Registro> registros;
     private double totalRecaudadoDiario;
-    // Total recaudado mensual.
     private double totalRecaudadoMensual;
 
     /**
@@ -30,12 +24,12 @@ public class Parqueadero {
         assert n > 0 : "El número de filas y columnas debe ser mayor que cero.";
         this.n = n;
         this.puestos = new Puesto[n][n];
-        this.registros = new ArrayList<>();
+        this.registros = new LinkedList<>();
         this.totalRecaudadoDiario = 0;
         this.totalRecaudadoMensual = 0;
 
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+        for (int i = 0; i < n; i=i+1) {
+            for (int j = 0; j < n; j=i+1) {
                 puestos[i][j] = new Puesto(i, j);
             }
         }
@@ -84,7 +78,7 @@ public class Parqueadero {
      *
      * @return La lista de registros.
      */
-    public List<Registro> getRegistros() {
+    public LinkedList<Registro> getRegistros() {
         return registros;
     }
 
@@ -95,7 +89,7 @@ public class Parqueadero {
      */
     public void setRegistros(List<Registro> registros) {
         assert registros != null : "La lista de registros no puede ser nula.";
-        this.registros = registros;
+        this.registros = (LinkedList<Registro>) registros;
     }
 
     /**

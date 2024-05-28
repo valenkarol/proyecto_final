@@ -1,6 +1,5 @@
 package co.edu.uniquindio.poo;
 
-import java.time.Duration;
 import java.time.LocalDateTime;
 
 /**
@@ -8,13 +7,9 @@ import java.time.LocalDateTime;
  * Contiene información sobre el vehículo, el puesto, la hora de ingreso y la hora de salida.
  */
 public class Registro {
-    // Vehículo registrado.
     private Vehiculo vehiculo;
-    // Puesto ocupado por el vehículo.
     private Puesto puesto;
-    // Hora de ingreso del vehículo.
     private LocalDateTime horaIngreso;
-    // Hora de salida del vehículo.
     private LocalDateTime horaSalida;
 
     /**
