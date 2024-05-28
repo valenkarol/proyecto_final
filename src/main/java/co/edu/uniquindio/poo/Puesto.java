@@ -1,9 +1,5 @@
 package co.edu.uniquindio.poo;
 
-/**
- * La clase Puesto representa un puesto de estacionamiento en el parqueadero.
- * Contiene la información de la ubicación del puesto y el vehículo que lo ocupa, si es el caso.
- */
 public class Puesto {
     // Coordenada i (fila) del puesto en la matriz del parqueadero.
     private int i;

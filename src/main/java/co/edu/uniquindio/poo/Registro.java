@@ -3,50 +3,95 @@ package co.edu.uniquindio.poo;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
+/**
+ * La clase Registro representa el registro de la entrada y salida de un vehículo en un puesto del parqueadero.
+ * Contiene información sobre el vehículo, el puesto, la hora de ingreso y la hora de salida.
+ */
 public class Registro {
-    private LocalDateTime fechaEntrada;
-    private LocalDateTime fechaSalida;
-    private final Vehiculo vehiculo;
-    private final Puesto puesto;
+    // Vehículo registrado.
+    private Vehiculo vehiculo;
+    // Puesto ocupado por el vehículo.
+    private Puesto puesto;
+    // Hora de ingreso del vehículo.
+    private LocalDateTime horaIngreso;
+    // Hora de salida del vehículo.
+    private LocalDateTime horaSalida;
 
-    public Registro(LocalDateTime fechaEntrada, LocalDateTime fechaSalida, Vehiculo vehiculo, Puesto puesto){
-        this.fechaEntrada=fechaEntrada;
-        this.fechaSalida=fechaSalida;
-        this.vehiculo=vehiculo;
-        this.puesto=puesto;
-    }
-    public long calcularMinutosEstacionamiento() {
-        Duration duration = Duration.between(fechaEntrada, fechaSalida);
-        return duration.toMinutes();
+    /**
+     * Constructor de la clase Registro.
+     *
+     * @param vehiculo Vehículo registrado.
+     * @param puesto Puesto ocupado por el vehículo.
+     */
+    public Registro(Vehiculo vehiculo, Puesto puesto) {
+        assert vehiculo != null : "El vehículo no puede ser nulo";
+        assert puesto != null : "El puesto no puede ser nulo";
+
+        this.vehiculo = vehiculo;
+        this.puesto = puesto;
+        this.horaIngreso = LocalDateTime.now();
     }
 
-    public LocalDateTime getFechaEntrada() {
-        return fechaEntrada;
-    }
-
-    public LocalDateTime getFechaSalida() {
-        return fechaSalida;
-    }
-
+    /**
+     * Obtiene el vehículo registrado.
+     *
+     * @return El vehículo registrado.
+     */
     public Vehiculo getVehiculo() {
         return vehiculo;
     }
 
+    /**
+     * Obtiene el puesto ocupado por el vehículo.
+     *
+     * @return El puesto ocupado.
+     */
     public Puesto getPuesto() {
         return puesto;
     }
-    
-    public double calcularCosto() {
-        long minutosEstacionamiento = calcularMinutosEstacionamiento();
-        double tarifaPorHoraCarro = 0.0;
 
-        for (Vehiculo vehiculo : carro) {
-    
-        } 
-        }
-
-        double costoTotal = (minutosEstacionamiento / 60.0) * tarifaPorHora;
-        return costoTotal;
+    /**
+     * Obtiene la hora de ingreso del vehículo.
+     *
+     * @return La hora de ingreso.
+     */
+    public LocalDateTime getHoraIngreso() {
+        return horaIngreso;
     }
 
+    /**
+     * Obtiene la hora de salida del vehículo.
+     *
+     * @return La hora de salida, o null si el vehículo aún no ha salido.
+     */
+    public LocalDateTime getHoraSalida() {
+        return horaSalida;
+    }
+
+    /**
+     * Establece la hora de salida del vehículo.
+     *
+     * @param horaSalida La hora de salida a establecer.
+     */
+    public void setHoraSalida(LocalDateTime horaSalida) {
+        assert horaSalida != null : "La hora de salida no puede ser nula";
+
+        this.horaSalida = horaSalida;
+    }
+
+    /**
+     * Calcula el costo del estacionamiento en base a la duración de la estancia y la tarifa por hora del vehículo.
+     *
+     * @return El costo del estacionamiento, o 0 si el vehículo aún no ha salido.
+     */
+    
+     public double calcularCosto() {
+        double costo = 0.0;
+        if (horaSalida != null){
+            long horas = java.time.Duration.between(horaIngreso, horaSalida).toSeconds();
+            costo = horas * vehiculo.getTarifaPorHoraVehiculo();
+        }
+        return costo;
+    }
+}
     
